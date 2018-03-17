@@ -24,7 +24,9 @@ User.create!(
   organisation: 'Credit Suisse',
   department: 'Marketing',
   role: 'Director',
-  gender: 'Female'
+  gender: 'Female',
+  about: Faker::Lorem.paragraph(2, false, 4),
+  looking_for: Faker::Lorem.sentence(2)
   )
 
 User.create!(
@@ -35,7 +37,9 @@ User.create!(
   organisation: 'Credit Suisse',
   department: 'Marketing',
   role: 'Director',
-  gender: 'Male'
+  gender: 'Male',
+  about: Faker::Lorem.paragraph(2, false, 4),
+  looking_for: Faker::Lorem.sentence(2)
   )
 
 User.create!(
@@ -46,7 +50,9 @@ User.create!(
   organisation: 'UBS',
   department: 'Marketing',
   role: 'Director',
-  gender: 'Male'
+  gender: 'Male',
+  about: Faker::Lorem.paragraph(2, false, 4),
+  looking_for: Faker::Lorem.sentence(2)
   )
 
 User.create!(
@@ -57,7 +63,9 @@ User.create!(
   organisation: 'UBS',
   department: 'Marketing',
   role: 'Director',
-  gender: 'Female'
+  gender: 'Female',
+  about: Faker::Lorem.paragraph(2, false, 4),
+  looking_for: Faker::Lorem.sentence(2)
   )
 
 puts 'Main users created'
@@ -71,7 +79,9 @@ puts 'Main users created'
     organisation: organisations.sample,
     department: departments.sample,
     role: roles.sample,
-    gender: genders.sample
+    gender: genders.sample,
+    about: Faker::Lorem.paragraph(2, false, 4),
+    looking_for: Faker::Lorem.sentence(2)
   )
 end
 

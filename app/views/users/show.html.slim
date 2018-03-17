@@ -3,12 +3,32 @@
   .row
     .col-xs-12.col-sm-6.col-sm-offset-3
       .profile
-        p = @user.first_name
-        p = @user.last_name
-        p = @user.organisation
+        h1 Profile
+
+        - if @user == current_user
+          p.bold.no-margin First Name:
+          p = @user.first_name
+          p.bold.no-margin Last Name:
+          p = @user.last_name
+          p.bold.no-margin Organisation:
+          p = @user.organisation
+
+        - else
+          p.bold.no-margin Name
+          p will be shown when Networking Request will have been accepted
+
+        p.bold.no-margin Department
         p = @user.department
+        p.bold.no-margin Role
         p = @user.role
+        p.bold.no-margin Gender
         p = @user.gender
+        p.bold.no-margin About
+        p = @user.about
+        p.bold.no-margin Looking for
+        p = @user.looking_for
 
-
-        = link_to "Edit Profile", edit_user_registration_path(current_user), class: 'btn btn-primary'
+        - if @user == current_user
+          = link_to 'Edit Profile', edit_user_registration_path(current_user), class: 'btn btn-primary'
+        - else
+          = link_to 'Send Networking Request', '#', class: 'btn btn-primary'
