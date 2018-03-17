@@ -17,6 +17,9 @@
             <%= f.input :department, required: true, autofocus: true, collection: ['Organisation', 'Sales', 'Marketing', 'HR'] %>
             <%= f.input :role, required: true, autofocus: true, collection: ['Normal Clerk', 'Director', 'Super-Chief'] %>
             <%= f.input :gender, required: true, autofocus: true, collection: ['Female', 'Male', 'Rather not say'] %>
+            <%= f.input :about, required: true, autofocus: true %>
+            <%= f.input :looking_for, required: true, autofocus: true %>
+
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

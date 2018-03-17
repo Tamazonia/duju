@@ -7,10 +7,6 @@
   p {
     font-size: 10px;
   }
-  &:hover {
-    opacity: 0.5
-  }
-
 }
 
 .card-logo {
@@ -31,5 +27,19 @@
   position: absolute;
   bottom: 10px;
   right: 20px;
+}
 
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: blue;
+  opacity: 0;
+  &:hover {
+    opacity: 0.1;
+  }
 }
