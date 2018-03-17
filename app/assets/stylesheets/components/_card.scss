@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+  height: 175px;
+  margin: 5px;
+  background-color: white;
+  p {
+    font-size: 10px;
+  }
+  &:hover {
+    opacity: 0.5
+  }
+
+}
+
+.card-logo {
+  max-height: 40%;
+  position: absolute;
+  top: 1px;
+  left: 10px;
+}
+
+.card-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+}
+
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+
+}

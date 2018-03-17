@@ -1,0 +1,17 @@
+
+.container.padding-top-more
+  h1 Find a Buddy
+  h3 All these people in your organisation are looking for network opportunities:
+  .row
+    - @users.each do |user|
+      .col-xs-12.col-sm-6.col-md-4
+        .card
+          = image_tag "#{user.organisation.gsub(/\s+/, '')}_Logo.png", class: 'card-logo'
+          .card-name
+            p.bold First and Last Name
+            p.no-margin will be shown when
+            p.no-margin Buddy Request accepted
+          .card-text
+            p.no-margin = user.gender
+            p.no-margin = user.department
+            p.no-margin = user.role
