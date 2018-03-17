@@ -6,4 +6,9 @@
         p = @user.first_name
         p = @user.last_name
         p = @user.organisation
+        p = @user.department
+        p = @user.role
+        p = @user.gender
 
+
+        = link_to "Edit Profile", edit_user_registration_path(current_user), class: 'btn btn-primary'
