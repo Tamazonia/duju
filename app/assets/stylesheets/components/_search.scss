@@ -1,0 +1,32 @@
+.search-input {
+  color: grey;
+  margin-bottom: 5px;
+  // width: 40vh;
+}
+
+
+.search-form {
+  .btn {
+    @media (max-width: $screen-sm-max) {
+    width: 100%;
+    }
+  }
+}
+
+
+.home-navbar-margin {
+   @media (max-width: $screen-sm-max) {
+    margin-top: 70px;
+  }
+}
+
+
+.filter-wrapper {
+   @media (max-width: $screen-xs-max) {
+    // padding-top: 12px;
+    padding-bottom: 0px;
+  }
+  background-color: rgb(206,218,239);
+  padding: 12px;
+  text-align: center;
+}

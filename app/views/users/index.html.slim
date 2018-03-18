@@ -1,6 +1,10 @@
+.filter-wrapper
+  .search-form.filter
+    .container
+      = render 'filter'
 
-.container.padding-top-more
-  h1 Find a Buddy
+.container
+  h1 Find a Colleague
   h3 All these people in your organisation are looking for network opportunities:
   .row
     - @users.each do |user|
@@ -10,7 +14,7 @@
           .card-name
             p.bold First and Last Name
             p.no-margin will be shown when
-            p.no-margin Buddy Request accepted
+            p.no-margin Network Request accepted
           .card-text
             p.no-margin = user.gender
             p.no-margin = user.department
