@@ -5,15 +5,15 @@
       .profile
         h1 Profile
 
-        - if @user == current_user
-          p.bold.no-margin First Name:
-          p = @user.first_name
-          p.bold.no-margin Last Name:
-          p = @user.last_name
-          p.bold.no-margin Organisation:
-          p = @user.organisation
+        / - if @user == current_user
+        p.bold.no-margin First Name
+        p = @user.first_name
+        p.bold.no-margin Last Name
+        p = @user.last_name
+        p.bold.no-margin Organisation:
+        p = @user.organisation
 
-        - else
+        / - else
           p.bold.no-margin Name
           p will be shown when Networking Request will have been accepted
 

@@ -12,11 +12,12 @@
         .card
           = image_tag "#{user.organisation.gsub(/\s+/, '')}_Logo.png", class: 'card-logo'
           .card-name
-            p.bold First and Last Name
-            p.no-margin will be shown when
-            p.no-margin Network Request accepted
-          .card-text
-            p.no-margin = user.gender
+            p.bold.no-margin
+              = user.first_name
+              =< user.last_name
             p.no-margin = user.department
+
+          .card-text
             p.no-margin = user.role
+            p.no-margin = user.gender
           = link_to "", user_path(user), class:"card-link"
