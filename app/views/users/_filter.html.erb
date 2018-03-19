@@ -1,7 +1,7 @@
 <%= simple_form_for :user_search, url: users_path, method: :get, html: {class: 'form-inline'} do |f| %>
-  <%= f.input :role, prompt: "Search for a role", label: false, collection: ['Normal Clerk', 'Director', 'Super-Chief'], input_html: {value: @role, class: 'search-input'} %>
-  <%= f.input :department, prompt: "Search for Department", label: false, collection: ['Organisation', 'Sales', 'Marketing', 'HR'], input_html: {value: @department, class: 'search-input'}%>
-  <%= f.input :gender, prompt: "Search for Department", label: false, collection: ['Male', 'Female'], input_html: {value: @gender, class: 'search-input'}%>
+  <%= f.input :role, prompt: "Search for a role", label: false, collection: ['Normal Clerk', 'Director', 'Super-Chief', nil], selected: @role, input_html: { value: @role, class: 'search-input' } %>
+  <%= f.input :department, prompt: "Search for Department", label: false, collection: ['Organisation', 'Sales', 'Marketing', 'HR', nil], selected: @department, input_html: { value: @department, class: 'search-input' }%>
+  <%= f.input :gender, prompt: "Search for Gender", label: false, collection: ['Male', 'Female', nil], selected: @gender, input_html: { value: @gender, class: 'search-input' }%>
 
   <%= f.submit "Find", class:"btn btn-primary" %>
 <% end %>
