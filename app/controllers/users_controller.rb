@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @contact = Contact.new
+    @contact.requester = current_user
+    # @requestee = User.find(params[:user_id])
+    # @contact.requestee = @requestee
+    # @requestee = @user
   end
 
   def index

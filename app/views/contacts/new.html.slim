@@ -1,0 +1,13 @@
+
+.container.fullscreen
+  .row
+    .col-xs12.col-sm-6.col-sm-offset-3
+      .form-login.home-navbar-margin
+          h1 New Event
+          = simple_form_for [@contact] do |f|
+            / = f.input :requester
+            / = f.input :requestee
+            = f.submit "Send Request", class: "btn btn-primary"
+- console
+
+
