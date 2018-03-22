@@ -1,0 +1,75 @@
+.container
+  h1 Your Network
+  h2 Your matched Colleagues
+  .contact_list.header
+    p.contact_item.bold
+      | Colleague
+    p.contact_item.bold
+      | Rank
+    p.contact_item.bold
+      | Department
+
+  - @contacts.each do |contact|
+    .contact_list
+      p.contact_item
+        - if contact.requester == current_user
+          = contact.requestee.first_name + " " + contact.requestee.last_name
+        - else
+          = contact.requester.first_name + " " + contact.requestee.last_name
+
+      p.contact_item
+        - if contact.requester == current_user
+          = contact.requestee.role
+        - else
+          = contact.requester.role
+
+      p.contact_item
+        - if contact.requester == current_user
+          = contact.requestee.department
+        - else
+          = contact.requester.department
+      = link_to "", user_path(contact.requestee), class:"list-link"
+
+
+
+  h2 Your open sent requests
+  .contact_list.header
+    p.contact_item.bold
+      | Colleague
+    p.contact_item.bold
+      | Rank
+    p.contact_item.bold
+      | Department
+  - @open_requests_sent.each do |contact|
+    .contact_list
+      p.contact_item
+        = contact.requestee.first_name + " " + contact.requestee.last_name
+
+      p.contact_item
+        = contact.requestee.role
+
+      p.contact_item
+        = contact.requestee.department
+      = link_to "", user_path(contact.requestee), class:"list-link"
+
+  h2 Your open received requests
+  .contact_list.header
+    p.contact_item.bold
+      | Colleague
+    p.contact_item.bold
+      | Rank
+    p.contact_item.bold
+      | Department
+  - @open_requests_received.each do |contact|
+    .contact_list
+        p.contact_item
+          = contact.requester.first_name + " " + contact.requester.last_name
+
+        p.contact_item
+          = contact.requester.role
+
+        p.contact_item
+          = contact.requester.department
+        = link_to "", user_path(contact.requestee), class:"list-link"
+
+

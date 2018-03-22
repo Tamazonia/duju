@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317194947) do
+ActiveRecord::Schema.define(version: 20180322185030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "requester_id"
+    t.bigint "requestee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "invite_message"
+    t.boolean "accepted"
+    t.index ["requestee_id"], name: "index_contacts_on_requestee_id"
+    t.index ["requester_id"], name: "index_contacts_on_requester_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

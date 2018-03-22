@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @contacts = Contact.where(["requester_id = ? and requestee_id = ?", current_user.id, @user.id])
+
   end
 
   def index
