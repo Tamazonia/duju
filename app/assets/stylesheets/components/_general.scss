@@ -34,3 +34,14 @@ p {
   font-size: 14px;
 }
 
+.btn-unusable {
+  border: solid 1px $mid-gray;
+  color: $mid-gray;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.bold {
+  text-weight: bold;
+}
+

@@ -30,7 +30,12 @@
 
         - if @user == current_user
           = link_to 'Edit Profile', edit_user_registration_path(current_user), class: 'btn btn-primary'
-        - else
+
+        - elsif @contacts.empty?
           = link_to 'Send Networking Request', new_user_contact_path(@user), class: 'btn btn-primary'
+        - else
+          p.btn.btn-unusable
+            | Contact Request sent
 
           / :portfolio_id => @portfolio.id)
+
