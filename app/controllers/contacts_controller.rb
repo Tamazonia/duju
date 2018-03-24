@@ -1,5 +1,8 @@
 class ContactsController < ApplicationController
   def show
+    @contact = Contact.find(params[:id])
+    @requester = @contact.requester
+    @requestee = @contact.requestee
   end
 
   def index
@@ -8,6 +11,7 @@ class ContactsController < ApplicationController
     @open_requests_received = Contact.where(requestee: @user, accepted: false)
     @contacts = Contact.where(["requester_id = ? or requestee_id = ?", @user.id, @user.id])
     @contacts = @contacts.where(accepted: true)
+    @networks = Network.where(networker_one: current_user)
   end
 
   def new
@@ -30,7 +34,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to user_path(@requestee)
     else
-      redirect_to new_contact_path(@contact)
+      redirect_to new_user_contact_path(@requestee)
     end
   end
 
@@ -42,6 +46,25 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def accept
+    @contact = Contact.find(params[:contact_id])
+    @contact.accepted = true
+    @contact.save
+    @requester = @contact.requester
+    @requestee = @contact.requestee
+    @network_one = Network.create!(networker_one: @requester, networker_two: @requestee)
+    @network_two = Network.create!(networker_one: @requestee, networker_two: @requester)
+    redirect_to user_path(@requester)
+  end
+
+  def decline
+    @contact = Contact.find(params[:contact_id])
+    @contact.accepted = false
+    @contact.save
+    @requester = @contact.requester
+    redirect_to user_path(@requester)
   end
 
 

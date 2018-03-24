@@ -1,34 +1,39 @@
 .container
   h1 Your Network
-  h2 Your matched Colleagues
-  .contact_list.header
-    p.contact_item.bold
-      | Colleague
-    p.contact_item.bold
-      | Rank
-    p.contact_item.bold
-      | Department
 
-  - @contacts.each do |contact|
-    .contact_list
-      p.contact_item
-        - if contact.requester == current_user
-          = contact.requestee.first_name + " " + contact.requestee.last_name
-        - else
-          = contact.requester.first_name + " " + contact.requestee.last_name
 
-      p.contact_item
-        - if contact.requester == current_user
-          = contact.requestee.role
-        - else
-          = contact.requester.role
 
-      p.contact_item
-        - if contact.requester == current_user
-          = contact.requestee.department
-        - else
-          = contact.requester.department
-      = link_to "", user_path(contact.requestee), class:"list-link"
+  / .contact_list.header
+  /   p.contact_item.bold
+  /     | Colleague
+  /   p.contact_item.bold
+  /     | Rank
+  /   p.contact_item.bold
+  /     | Department
+
+  / - @contacts.each do |contact|
+  /   .contact_list
+  /     p.contact_item
+  /       - if contact.requester == current_user
+  /         = contact.requestee.first_name + " " + contact.requestee.last_name
+  /       - else
+  /         = contact.requester.first_name + " " + contact.requester.last_name
+
+  /     p.contact_item
+  /       - if contact.requester == current_user
+  /         = contact.requestee.role
+  /       - else
+  /         = contact.requester.role
+
+  /     p.contact_item
+  /       - if contact.requester == current_user
+  /         = contact.requestee.department
+  /       - else
+  /         = contact.requester.department
+  /     - if contact.requester == current_user
+  /       = link_to "", user_path(contact.requestee), class:"list-link"
+  /     - else
+  /       = link_to "", user_path(contact.requester), class:"list-link"
 
 
 
@@ -70,6 +75,24 @@
 
         p.contact_item
           = contact.requester.department
-        = link_to "", user_path(contact.requestee), class:"list-link"
+        = link_to "", contact_path(contact), class:"list-link"
+
+  .container
+  h1 Your Network Colleagues
+  .row
+    - @networks.each do |network|
+      .col-xs-12.col-sm-6.col-md-4
+        .card
+          = image_tag "#{network.networker_two.organisation.gsub(/\s+/, '')}_Logo.png", class: 'card-logo'
+          .card-name
+            p.bold.no-margin
+              = network.networker_two.first_name
+              =< network.networker_two.last_name
+            p.no-margin = network.networker_two.department
+
+          .card-text
+            p.no-margin = network.networker_two.role
+            p.no-margin = network.networker_two.gender
+          = link_to "", user_path(network.networker_two), class:"card-link"
 
 
