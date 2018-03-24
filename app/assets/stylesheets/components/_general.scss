@@ -41,6 +41,28 @@ p {
   opacity: 0.8;
 }
 
+.btn-unusable-green {
+  border: solid 1px green;
+  color: green;
+  // background-color: green;
+  font-style: italic;
+  opacity: 0.8;
+  &:hover {
+    color: green;
+  }
+}
+
+.btn-unusable-red {
+  border: solid 1px red;
+  color: red;
+  // background-color: green;
+  font-style: italic;
+  opacity: 0.8;
+  &:hover {
+    color: red;
+  }
+}
+
 .bold {
   text-weight: bold;
 }

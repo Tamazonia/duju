@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @contacts = Contact.where(["requester_id = ? and requestee_id = ?", current_user.id, @user.id])
-
+    @contacts_two = Contact.where(["requester_id = ? and requestee_id = ?", @user.id, current_user.id])
+    @networks = Network.where(networker_one: @user)
   end
 
   def index

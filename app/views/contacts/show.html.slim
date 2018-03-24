@@ -1,2 +1,30 @@
-h1 Contacts#show
-p Find me in app/views/contacts/show.html.slim
+
+.container
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      .profile
+        h1 You have a new request
+
+        p.bold.no-margin Message
+        p = @contact.invite_message
+
+        p.bold.no-margin First Name
+        p = @requester.first_name
+        p.bold.no-margin Last Name
+        p = @requester.last_name
+        p.bold.no-margin Organisation:
+        p = @requester.organisation
+        p.bold.no-margin Department
+        p = @requester.department
+        p.bold.no-margin Role
+        p = @requester.role
+        p.bold.no-margin Gender
+        p = @requester.gender
+        p.bold.no-margin About
+        p = @requester.about
+        p.bold.no-margin Looking for
+        p = @requester.looking_for
+
+        - if @requestee == current_user && @contact.accepted == false
+          = link_to 'Accept Invite', contact_accept_path(@contact), class: 'btn btn-success'
+          = link_to 'Decline Invite', contact_decline_path(@contact), class: 'btn btn-danger'
