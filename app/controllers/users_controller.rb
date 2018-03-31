@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     @users = User.where(organisation: @organisation)
 
 
-    if params[:user_search] && params[:user_search][:gender].present?
-      @gender = params[:user_search][:gender]
-      @users = @users.where(gender: @gender)
+    if params[:user_search] && params[:user_search][:location].present?
+      @location = params[:user_search][:location]
+      @users = @users.where(location: @location)
     end
 
     if params[:user_search] && params[:user_search][:role].present?

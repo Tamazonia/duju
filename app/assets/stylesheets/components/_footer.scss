@@ -1,0 +1,31 @@
+// Your footer style
+
+.footer {
+  background-color: $gray;
+  padding: 20px;
+  color: rgb(240,240,240);
+  font-size: 13px;
+  min-height: 115px;
+  margin-top: 4em;
+  // position:absolute;
+  // width:100%;
+  // bottom:0px;
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.bold {
+  font-weight: 10px;
+}
+
+
