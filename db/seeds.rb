@@ -8,9 +8,12 @@ puts 'Previous users destroyed'
 
 users = []
 organisations = ['UBS', 'Credit Suisse']
-departments = ['Organisation', 'Sales', 'Marketing', 'HR']
+departments = ['WTID 12', 'WTRF 62', 'WAAB', 'WTRA 432', 'WAOD 5', 'WTIC 23']
 roles = ['Normal Clerk', 'Normal Clerk', 'Director', 'Super-Chief']
 genders = ['Female', 'Male']
+locations = ['Zurich', 'Basel', 'Geneva', 'Lausanne']
+
+
 
 User.create!(
   first_name: 'Eva',
@@ -18,11 +21,13 @@ User.create!(
   email: 'eva@duju.ch',
   password: 'dujurox',
   organisation: 'Credit Suisse',
-  department: 'Marketing',
+  department: 'WTID 12',
   role: 'Director',
   gender: 'Female',
+  location: 'Zurich',
   about: Faker::Lorem.paragraph(2, false, 4),
-  looking_for: Faker::Lorem.sentence(2)
+  looking_for: Faker::Lorem.sentence(2),
+  explanation: 'My Department does something very interesting, that is doing bla bla bla'
   )
 
 User.create!(
@@ -31,11 +36,13 @@ User.create!(
   email: 'fabi@duju.ch',
   password: 'dujurox',
   organisation: 'Credit Suisse',
-  department: 'Marketing',
+  department: 'WAAB',
   role: 'Director',
   gender: 'Male',
+  location: 'Zurich',
   about: Faker::Lorem.paragraph(2, false, 4),
-  looking_for: Faker::Lorem.sentence(2)
+  looking_for: Faker::Lorem.sentence(2),
+  explanation: 'My Department does something very interesting, that is doing bla bla bla'
   )
 
 User.create!(
@@ -44,11 +51,13 @@ User.create!(
   email: 'josu@duju.ch',
   password: 'dujurox',
   organisation: 'UBS',
-  department: 'Marketing',
+  department: 'WAAB',
   role: 'Director',
   gender: 'Male',
+  location: 'Zurich',
   about: Faker::Lorem.paragraph(2, false, 4),
-  looking_for: Faker::Lorem.sentence(2)
+  looking_for: Faker::Lorem.sentence(2),
+  explanation: 'My Department does something very interesting, that is doing bla bla bla'
   )
 
 User.create!(
@@ -57,11 +66,13 @@ User.create!(
   email: 'ri@duju.ch',
   password: 'dujurox',
   organisation: 'UBS',
-  department: 'Marketing',
+  department: 'WAAB',
   role: 'Director',
   gender: 'Female',
+  location: 'Zurich',
   about: Faker::Lorem.paragraph(2, false, 4),
-  looking_for: Faker::Lorem.sentence(2)
+  looking_for: Faker::Lorem.sentence(2),
+  explanation: 'My Department does something very interesting, that is doing bla bla bla'
   )
 
 puts 'Main users created'
@@ -77,7 +88,9 @@ puts 'Main users created'
     role: roles.sample,
     gender: genders.sample,
     about: Faker::Lorem.paragraph(2, false, 4),
-    looking_for: Faker::Lorem.sentence(2)
+    looking_for: Faker::Lorem.sentence(2),
+    location: locations.sample,
+    explanation: 'My Department does something very interesting, that is doing bla bla bla'
   )
 end
 

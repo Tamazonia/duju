@@ -4,15 +4,16 @@
       .profile
 
         h1 Profile
+        = image_tag('female-profile', class: "profile-img img-circle")
         p.bold.no-margin First Name
         p = @user.first_name
         p.bold.no-margin Last Name
         p = @user.last_name
-        p.bold.no-margin Organisation:
+        p.bold.no-margin Organisation
         p = @user.organisation
         p.bold.no-margin Department
         p = @user.department
-        p.bold.no-margin Role
+        p.bold.no-margin Title
         p = @user.role
         p.bold.no-margin Gender
         p = @user.gender
@@ -20,11 +21,13 @@
         p = @user.about
         p.bold.no-margin Looking for
         p = @user.looking_for
+        p.bold.no-margin What my department does:
+        p = @user.explanation
         -if @user == current_user
           = link_to 'Edit Profile', edit_user_registration_path(current_user), class: 'btn btn-primary'
 
         -elsif @contacts.empty? && @contacts_two.empty?
-          = link_to 'Send Networking Request', new_user_contact_path(@user), class: 'btn btn-primary'
+          = link_to 'Send Lunch Request', new_user_contact_path(@user), class: 'btn btn-primary'
 
         -elsif @contacts.empty?
           - if @contacts_two.first.accepted == true
@@ -43,7 +46,7 @@
       - if @user != current_user
         .profile
           h1
-            | Contacts of
+            | Lunch history
             =< @user.first_name
             =< @user.last_name
 
@@ -51,7 +54,7 @@
             p
               = @user.first_name
               =>< @user.last_name
-              | does currently not have any contacts
+              | does currently not have a lunch history
 
           - else
             - @networks.each do |network|

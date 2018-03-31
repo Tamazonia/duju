@@ -1,0 +1,29 @@
+<footer>
+  <div class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-xs-12 ">
+          <p><strong> Neatwork </strong></p>
+            <ul>
+              <li><%= link_to "Find a sponti Colleague",  users_path %></li>
+              <% if current_user %>
+                <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %>  </li>
+              <% else %>
+                <li> <%= link_to "Login", new_user_session_path %> </li>
+              <% end %>
+
+
+            </ul>
+        </div>
+          <div class="col-md-3 col-xs-12 ">
+            <p><strong> Useful Information </strong></p>
+            <ul>
+              <li> Restaurant Offers </li>
+              <li> <%= link_to "Events",  pages_events_path %></li>
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
