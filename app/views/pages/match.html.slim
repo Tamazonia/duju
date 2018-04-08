@@ -1,0 +1,52 @@
+.container.fullscreen
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      .profile
+
+        h1 Colleague looking to have Lunch today
+        = image_tag("silhouette", class: "profile-img img-circle")
+        p.bold.no-margin First Name
+        p = User.last.first_name
+        p.bold.no-margin Last Name
+        p = User.last.last_name
+        p.bold.no-margin Organisation
+        p = User.last.organisation
+        p.bold.no-margin Department
+        p = User.last.department
+        p.bold.no-margin Title
+        p = User.last.role
+        p.bold.no-margin Offering
+        p = User.last.about
+        p.bold.no-margin Looking for
+        p = User.last.looking_for
+        p.bold.no-margin My department
+        p = User.last.explanation
+        button.btn.btn-primary type="button" data-toggle="modal" data-target="#myModal"
+          | Chat with
+          =< User.last.first_name
+
+      .profile
+        h1 Locations near you with special offers today
+
+
+
+.modal.fade#myModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"x
+
+        h4 class="modal-title" id="myModalLabel"
+          | Chat with
+          =< User.last.first_name
+
+      .modal-body
+        i.mid-gray Type your Message here
+      .modal-footer
+        .btn.btn-sucess
+          | Send
+
+
+
+
+

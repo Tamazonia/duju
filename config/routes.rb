@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'pages/events'
+  get 'pages/match'
 
 
   resources :users do
