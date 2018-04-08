@@ -7,6 +7,7 @@
     <% if current_user%>
       <%= link_to "Find a Colleague", users_path, class: "btn btn-primary btn-lg" %>
       <%= link_to "Find an Event", pages_events_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to "Find a Random Lunch Partner", pages_match_path, class: "btn btn-primary btn-lg" %>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-lg" %>
       <%= link_to "Admin", new_user_session_path, class: "btn btn-primary btn-lg" %>
