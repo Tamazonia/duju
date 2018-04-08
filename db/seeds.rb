@@ -7,7 +7,7 @@ User.destroy_all
 puts 'Previous users destroyed'
 
 users = []
-organisations = ['Credit Suisse' 'Credit Suisse']
+organisations = ['Credit Suisse']
 departments = ['Cross Border Information Management', 'CRS and AEI implementation','IWM Solution Architecture','Us 871m external oversight','Market HEad Middle East and Africa','FRM IT CH', 'US 871m external', 'Solution Architecture', 'DevOps Zurch', 'Product Buffet', 'Performance CH', 'Application Maintenance', 'CM ME', 'Sales Management','Investran']
 roles = ['CEO', 'AVP', 'MxB', 'VP', 'Staff', 'DIR', 'ENO', 'MDR']
 genders = ['Female', 'Male']
