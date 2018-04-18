@@ -13,19 +13,27 @@
         p = @user.organisation
         p.bold.no-margin Department
         p = @user.department
+        p.bold.no-margin My department
+        p = @user.explanation
         p.bold.no-margin Title
         p = @user.role
         p.bold.no-margin Offering
         p = @user.about
         p.bold.no-margin Looking for
         p = @user.looking_for
-        p.bold.no-margin My department
-        p = @user.explanation
         -if @user == current_user
           = link_to 'Edit Profile', edit_user_registration_path(current_user), class: 'btn btn-primary'
 
+          .profile
+          h1
+            | Recommended Colleagues
+          p
+            => link_to "#{User.fifth.first_name} #{User.fifth.last_name}", user_path(User.fifth)
+            | - recommended by Sarah Abderhalden
+
         -elsif @contacts.empty? && @contacts_two.empty?
-          = link_to 'Send Lunch Request', new_user_contact_path(@user), class: 'btn btn-primary'
+          = link_to 'Send Lunch Request', new_user_contact_path(@user), class: 'btn btn-success'
+          = link_to 'Recommend to a Colleague','#', class: 'btn btn-primary'
 
         -elsif @contacts.empty?
           - if @contacts_two.first.accepted == true
