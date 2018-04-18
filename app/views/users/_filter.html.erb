@@ -2,6 +2,6 @@
   <%= f.input :role, prompt: "Search for a title", label: false, collection: ['CEO', 'AVP', 'MxB', 'VP', 'Staff', 'DIR', 'ENO', 'MDR', nil], selected: @role, input_html: { value: @role, class: 'search-input' } %>
   <%= f.input :department, prompt: "Search for Department", label: false, collection: ['Cross Border Information Management', 'CRS and AEI implementation','IWM Solution Architecture','Us 871m external oversight','Market HEad Middle East and Africa','FRM IT CH', 'US 871m external', 'Solution Architecture', 'DevOps Zurch', 'Product Buffet', 'Performance CH', 'Application Maintenance', 'CM ME', 'Sales Management','Investran', nil], selected: @department, input_html: { value: @department, class: 'search-input' }%>
   <%= f.input :location, prompt: "Search for Location", label: false, collection: ['Uetlibergstrasse', 'Claridenstrasse', 'Kalendergasse', 'Bleicherweg', 'Talacker', 'Europaallee', nil], selected: @location, input_html: { value: @location, class: 'search-input' }%>
-
+  <%= f.input :location, placeholder: "Search for Keyword", label:false, input_html: { class: 'search-input' }%>
   <%= f.submit "Find", class:"btn btn-primary" %>
 <% end %>

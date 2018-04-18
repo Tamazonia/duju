@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'pages/events'
   get 'pages/match'
+  get 'pages/match_two'
 
 
   resources :users do

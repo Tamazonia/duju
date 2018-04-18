@@ -6,26 +6,25 @@
         h1 Colleague looking to have Lunch today
         = image_tag("silhouette.png", class: "profile-img img-circle")
         p.bold.no-margin First Name
-        p = User.last.first_name
+        p = User.fifth.first_name
         p.bold.no-margin Last Name
-        p = User.last.last_name
+        p = User.fifth.last_name
         p.bold.no-margin Organisation
-        p = User.last.organisation
+        p = User.fifth.organisation
         p.bold.no-margin Department
-        p = User.last.department
+        p = User.fifth.department
         p.bold.no-margin Title
-        p = User.last.role
+        p = User.fifth.role
         p.bold.no-margin Offering
-        p = User.last.about
+        p = User.fifth.about
         p.bold.no-margin Looking for
-        p = User.last.looking_for
+        p = User.fifth.looking_for
         p.bold.no-margin My department
-        p = User.last.explanation
+        p = User.fifth.explanation
         button.btn.btn-primary type="button" data-toggle="modal" data-target="#myModal"
           | Chat with
-          =< User.last.first_name
-
-        => link_to "Next Random Lunch Partner", pages_match_two_path
+          =< User.fifth.first_name
+        => link_to "Next Random Lunch Partner", pages_match_path
 
       .profile
         h1 Locations near you with special offers today
@@ -40,7 +39,7 @@
 
         h4 class="modal-title" id="myModalLabel"
           | Chat with
-          =< User.last.first_name
+          =< User.fifth.first_name
 
       .modal-body
         i.mid-gray Type your Message here
