@@ -4,13 +4,17 @@
       .profile
 
         h1 Profile
-        = image_tag("silhouette.png", class: "profile-img img-circle")
+        - if @user.gender == 'Female'
+          = image_tag("female.png", class: "profile-img img-circle")
+        - else
+          = image_tag("male.png", class: "profile-img img-circle")
+
         p.bold.no-margin First Name
         p = @user.first_name
         p.bold.no-margin Last Name
         p = @user.last_name
-        p.bold.no-margin Organisation
-        p = @user.organisation
+        p.bold.no-margin Location
+        p = @user.location
         p.bold.no-margin Department
         p = @user.department
         p.bold.no-margin My department
