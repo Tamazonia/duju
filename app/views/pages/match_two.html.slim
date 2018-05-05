@@ -4,7 +4,11 @@
       .profile
 
         h1 Colleague looking to have Lunch today
-        = image_tag("silhouette.png", class: "profile-img img-circle")
+        - if User.fifth.gender == 'Female'
+          = image_tag("female.png", class: "profile-img img-circle")
+        - else
+          = image_tag("male.png", class: "profile-img img-circle")
+
         p.bold.no-margin First Name
         p = User.fifth.first_name
         p.bold.no-margin Last Name
@@ -28,6 +32,12 @@
 
       .profile
         h1 Locations near you with special offers today
+        p
+          strong> Milchbar
+          | Free Salad for a NeAtwork Lunch
+        p
+          strong> Bederhof
+          | Two for one dessert for a NeAtwork Lunch
 
 
 
