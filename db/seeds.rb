@@ -17,7 +17,7 @@ locations = ['Uetlibergstrasse', 'Claridenstrasse', 'Kalendergasse', 'Bleicherwe
 User.create!(
   first_name: 'Eva',
   last_name: 'Stamm',
-  email: 'eva.stamm@credit-suisse.ch',
+  email: 'eva.stamm@credit-suisse.com',
   password: 'dujurox',
   organisation: 'Credit Suisse',
   department: 'Cross Boarder Information Management',
@@ -32,7 +32,7 @@ User.create!(
 User.create!(
   first_name: 'Fabian',
   last_name: 'Kauter',
-  email: 'fabian.kauter@credit-suisse.ch',
+  email: 'fabian.kauter@credit-suisse.com',
   password: 'dujurox',
   organisation: 'Credit Suisse',
   department: 'Product Buffet',
@@ -47,7 +47,7 @@ User.create!(
 User.create!(
   first_name: 'Josu',
   last_name: 'Iturrioz',
-  email: 'josu.iturrioz@credit-suisse.ch',
+  email: 'josu.iturrioz@credit-suisse.com',
   password: 'dujurox',
   organisation: 'Credit Suisse',
   department: 'CRS and AEI implementation',
@@ -62,7 +62,7 @@ User.create!(
 User.create!(
   first_name: 'Rahel',
   last_name: 'Imobersteg',
-  email: 'rahel.imobersteg@duju.ch',
+  email: 'rahel.imobersteg@credit-suisse.com',
   password: 'dujurox',
   organisation: 'Credit Suisse',
   department: 'IWM Solution Architecture',
