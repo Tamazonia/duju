@@ -97,7 +97,7 @@ puts 'Main users created'
 users << User.create!(
   first_name: 'Stefano',
   last_name: 'Bickel',
-  email: 'Stefano.Boeckel@credit-suisse.com',
+  email: 'Stefano.Bickel@credit-suisse.com',
   password: 'dujurox',
   organisation: 'Credit Suisse',
   department: 'Cross Border Information Management',
