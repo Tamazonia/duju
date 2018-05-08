@@ -76,23 +76,6 @@ User.create!(
 
 puts 'Main users created'
 
-# 35.times do
-#   users << User.create!(
-#     email: Faker::Internet.email,
-#     first_name: Faker::Name.first_name,
-#     last_name:Faker::Name.last_name,
-#     password: 'dujurox',
-#     organisation: organisations.sample,
-#     department: departments.sample,
-#     role: roles.sample,
-#     gender: genders.sample,
-#     about: 'US Tax know how',
-#     looking_for: 'After work events',
-#     location: locations.sample,
-#     explanation: 'My team is responsible that the bank builds consistent and strategically defined IT infrastructure'
-#   )
-# end
-
 
 users << User.create!(
   first_name: 'Stefano',
